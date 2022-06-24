@@ -1,0 +1,93 @@
+.conten {
+    margin-top: 30px;
+    height: 600px;  
+    position: relative;
+    background-color: antiquewhite;
+}
+
+.box1 {
+    border: 1px solid black;
+    height: 600px;
+    width: 50%;
+    position: absolute;
+}
+
+.box2 {
+    border: 1px solid black;
+    border-left: none;
+    height: 600px;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box1 #taokhoa {
+    font-size: large;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.box1 h4 {
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.box1 textarea {
+    margin-left: 30px;
+}
+
+.box2 h4 {
+    margin-left: 10px;
+}
+
+.box2 textarea {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.box2 #mahoa {
+    position: absolute;
+    right: 50px;
+    top: 235px;
+    font-size: large;
+}
+
+.box2 #giaima {
+    position: absolute;
+    right: 50px;
+    top: 425px;
+    font-size: large;
+}
+
+h1 {
+    text-align: center;
+}
+
+#refesh {
+    width: 200px;
+    text-align: center;
+    font-size: large;
+    margin-top: 30px;
+    margin-left: 660px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.conten .box1 .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+.conten .box1 .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
