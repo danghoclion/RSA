@@ -22,15 +22,18 @@
     if ($FileType == "txt") {
       $myfile = fopen("$file_tmp", "r") or die("Unable to open file!");
       while (!feof($myfile)) {
-        $strng = $strng . fgets($myfile); //. "<br>";
+        $strng = $strng . fgets($myfile);
       }
       fclose($myfile);
     }
     else if ($FileType == "pdf") {
       include "./vendor/autoload.php";
-      $parser = new \Smalot\PdfParser\Parser();
+      $config = new \Smalot\PdfParser\Config();
+      $config->setHorizontalOffset('');
+      $parser = new \Smalot\PdfParser\Parser([], $config);
       $pdf = $parser->parseFile($file_tmp);
-      $strng = $pdf->getText();
+      $strng = $pdf->getText('path/to/pdf.pdf');
+      $strng = preg_replace('/\s+/', ' ', $strng);
     }
     else if($FileType == "docx") {
       include "./readfile.php";
@@ -101,7 +104,7 @@
           <input type="file" id="fileToUpload" name="fileToUpload" placeholder="Select a PDF file" required="">
         </div>
         <input id="file" type="submit" name="submit" class="btn" value="Đọc Text">
-        <textarea name="" id="txtbanro" cols="90" rows="7"><?php if ($strng !== "") echo $strng; ?></textarea>
+        <textarea name="" id="txtbanro" cols="90" rows="7"><?php if($strng !== "")echo $strng?></textarea>
       </form>
       <h4>Chuỗi mã hóa RSA: </h4>
       <button id="mahoa" type="submit">Mã hóa RSA</button>
